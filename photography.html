@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography &amp; Film — Kareem Elkhatib</title>
+  <meta name="description" content="Engagement and wedding photography & videography by Kareem Elkhatib — Atlanta-based. View the full gallery." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@350;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">Kareem Elkhatib<span class="brand__dot">.</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="photography.html" aria-current="page">Photography</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- pic-time embedded gallery (bykareem.pic-time.com) — nothing else, by design -->
+    <div class="gallery-wrap gallery-wrap--full">
+      <script src="https://embedding.pic-time.com/pictures/scripts/compiled/artgalleryembed.js"></script>
+      <iframe
+        frameborder="0"
+        id="pictimeIntegration"
+        title="Photography gallery by Kareem Elkhatib"
+        loading="lazy"
+        src="https://bykareem.pic-time.com/client?headless=true"></iframe>
+    </div>
+  </main>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/reveal.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kareem Elkhatib — Engineer · Founder · Wedding Filmmaker</title>
+  <meta name="description" content="Kareem Elkhatib — electrical engineer, founder of Local Service Marketers, and wedding & engagement photographer based in Atlanta, GA." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@350;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="brand" href="index.html">Kareem Elkhatib<span class="brand__dot">.</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="photography.html">Photography</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO (above the fold: photo · name · sub-headline) ===== -->
+    <section class="hero hero--home">
+      <div class="container">
+        <div class="hero__intro-block">
+          <div class="hero__photo">
+            <!-- TODO: replace with real portrait → assets/img/profile.jpg -->
+            <div class="frame frame--placeholder frame--round" data-label="Profile"></div>
+          </div>
+          <p class="hero__meta">Atlanta, Georgia</p>
+          <h1 class="hero__title">
+            <span class="line"><span>Kareem Elkhatib</span></span>
+          </h1>
+          <p class="hero__sub">
+            Engineer, founder &amp; wedding filmmaker — here's the path that
+            built all three, year by year.
+          </p>
+        </div>
+
+        <a class="hero__scroll" href="#timeline-start">
+          <span class="hero__scroll-label">The timeline</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== LIFE TIMELINE =====
+         Milestones live in ONE place: assets/js/timeline.js (the MILESTONES array).
+         Add / edit / reorder there — the markup below is only the mount + sticky rail. -->
+    <section class="section timeline" id="timeline-start">
+      <div class="container">
+        <header class="timeline__head reveal">
+          <p class="eyebrow">The timeline</p>
+          <h2 class="timeline__heading">A life, in order.</h2>
+          <p class="lead">
+            Every milestone that shaped the engineer, the founder, and the
+            filmmaker — scroll to move through the years.
+          </p>
+        </header>
+
+        <div class="timeline__layout">
+          <!-- Sticky rail: the giant year crossfades + the line draws as you scroll -->
+          <aside class="timeline__rail" aria-hidden="true">
+            <div class="timeline__rail-inner">
+              <p class="timeline__bigyear" data-timeline-year>—</p>
+              <div class="timeline__progress">
+                <span class="timeline__progress-fill" data-timeline-fill></span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Milestones render here from timeline.js -->
+          <ol class="timeline__track" id="timeline"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATEMENT ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="statement reveal">
+          <p class="statement__text">
+            “The rare person who builds the system, runs the business, and
+            <em>captures the moment.</em>”
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brandcol footer__col">
+          <p class="footer__name">Kareem Elkhatib</p>
+          <p class="footer__tag">Engineer, founder, and wedding filmmaker based in Atlanta, Georgia.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:khatibkareem983@gmail.com">Email</a></li>
+            <li><a href="https://instagram.com/kkareem_1" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://linkedin.com/in/kelkhatib" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="tel:+14042219111">(404) 221-9111</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>&copy; 2026 Kareem Elkhatib</span>
+        <span>Atlanta, GA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/timeline.js" defer></script>
+</body>
+</html>

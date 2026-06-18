@@ -1,0 +1,58 @@
+/* ============================================================
+   Design Tokens — Kareem Elkhatib portfolio
+   White-primary, earth-tone accents, restrained + cinematic.
+   Single source of truth for color, type, spacing, motion.
+   ============================================================ */
+
+:root {
+  /* --- Color: warm white base, espresso ink, sand + bronze accent --- */
+  --paper: #faf8f4;        /* warm white page base */
+  --panel: #ffffff;        /* pure white raised panels */
+  --ink: #211b16;          /* near-black espresso text */
+  --ink-soft: #5c5247;     /* muted body text */
+  --ink-faint: #9a8f81;    /* captions, meta */
+  --sand: #c9b79c;         /* muted sand — dividers, soft fills */
+  --sand-wash: #efe7da;    /* very light sand tint — placeholder wash */
+  --bronze: #a6724b;       /* single accent — used sparingly */
+  --bronze-deep: #8a5d3a;  /* accent hover */
+  --line: #e7dfd2;         /* hairline rule on paper */
+
+  /* --- Typography --- */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Fluid type scale (clamp: min, preferred, max) */
+  --step--1: clamp(0.83rem, 0.79rem + 0.18vw, 0.94rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  --step-3:  clamp(2rem, 1.6rem + 2vw, 3.1rem);
+  --step-4:  clamp(2.7rem, 1.9rem + 3.6vw, 4.8rem);
+  --step-5:  clamp(3.4rem, 2rem + 6.5vw, 7.5rem);
+
+  /* --- Spacing scale --- */
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --space-2xl: 8rem;
+  --space-3xl: 11rem;
+
+  /* --- Layout --- */
+  --measure: 68ch;          /* readable text width */
+  --container: 1240px;      /* max content width */
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-slow: 1.1s;
+  --dur-med: 0.6s;
+  --dur-fast: 0.3s;
+
+  /* --- Misc --- */
+  --radius: 2px;            /* nearly square — refined, not bubbly */
+  --shadow-soft: 0 24px 60px -28px rgba(33, 27, 22, 0.25);
+}
