@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kareem Elkhatib — Engineer · Founder · Wedding Filmmaker</title>
-  <meta name="description" content="Kareem Elkhatib — electrical engineer, founder of Local Service Marketers, and wedding & engagement photographer based in Atlanta, GA." />
+  <title>Kareem Elkhatib — EE Student · Founder · Photographer</title>
+  <meta name="description" content="Kareem Elkhatib — electrical engineering student at the University of Georgia, founder of Local Service Marketers, and wedding & engagement photographer based in Atlanta, GA." />
+
+  <meta property="og:title" content="Kareem Elkhatib — EE Student · Founder · Photographer" />
+  <meta property="og:description" content="Electrical engineering student at the University of Georgia, founder of Local Service Marketers, and wedding & engagement photographer based in Atlanta, GA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kareemelkhatib.com/" />
+  <!-- TODO: add og:image once a real photo exists (e.g. assets/img/og.jpg, 1200×630) -->
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +34,7 @@
       <nav aria-label="Primary">
         <ul class="nav__links">
           <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="resume.html">Resume</a></li>
           <li><a class="nav__link" href="photography.html">Photography</a></li>
           <li><a class="nav__link" href="contact.html">Contact</a></li>
         </ul>
@@ -34,7 +43,7 @@
   </header>
 
   <main>
-    <!-- ===== HERO (above the fold: photo · name · sub-headline) ===== -->
+    <!-- ===== HERO (photo · name · identity line) ===== -->
     <section class="hero hero--home">
       <div class="container">
         <div class="hero__intro-block">
@@ -47,57 +56,35 @@
             <span class="line"><span>Kareem Elkhatib</span></span>
           </h1>
           <p class="hero__sub">
-            Engineer, founder &amp; wedding filmmaker — here's the path that
-            built all three, year by year.
+            Electrical engineering student at the University of Georgia.
+            Founder of Local Service Marketers.
+            Wedding &amp; engagement photographer.
           </p>
-        </div>
-
-        <a class="hero__scroll" href="#timeline-start">
-          <span class="hero__scroll-label">The timeline</span>
-          <span class="hero__scroll-line" aria-hidden="true"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== LIFE TIMELINE =====
-         Milestones live in ONE place: assets/js/timeline.js (the MILESTONES array).
-         Add / edit / reorder there — the markup below is only the mount + sticky rail. -->
-    <section class="section timeline" id="timeline-start">
-      <div class="container">
-        <header class="timeline__head reveal">
-          <p class="eyebrow">The timeline</p>
-          <h2 class="timeline__heading">A life, in order.</h2>
-          <p class="lead">
-            Every milestone that shaped the engineer, the founder, and the
-            filmmaker — scroll to move through the years.
-          </p>
-        </header>
-
-        <div class="timeline__layout">
-          <!-- Sticky rail: the giant year crossfades + the line draws as you scroll -->
-          <aside class="timeline__rail" aria-hidden="true">
-            <div class="timeline__rail-inner">
-              <p class="timeline__bigyear" data-timeline-year>—</p>
-              <div class="timeline__progress">
-                <span class="timeline__progress-fill" data-timeline-fill></span>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Milestones render here from timeline.js -->
-          <ol class="timeline__track" id="timeline"></ol>
         </div>
       </div>
     </section>
 
-    <!-- ===== STATEMENT ===== -->
-    <section class="section">
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
       <div class="container">
-        <div class="statement reveal">
-          <p class="statement__text">
-            “The rare person who builds the system, runs the business, and
-            <em>captures the moment.</em>”
-          </p>
+        <p class="eyebrow reveal">About</p>
+        <p class="lead reveal" style="--i: 1;">
+          I study electrical engineering at the University of Georgia, class
+          of 2028. The rest of my time goes to building things end-to-end:
+          growth and sales systems for small businesses, a web design and SEO
+          studio for home-service companies, and wedding films and
+          photographs under By Kareem.
+        </p>
+        <p class="reveal" style="--i: 2;">
+          My favorite work sits in the overlap — like the external camera
+          power system I engineered for my own film rigs, which took a camera
+          from minutes of runtime to hours. Different rooms, same habit:
+          understand how the thing works, then build it properly.
+        </p>
+        <div class="about__links reveal" style="--i: 3;">
+          <a class="btn btn--ghost" href="resume.html">Resume</a>
+          <a class="link-underline" href="photography.html">Photography →</a>
+          <a class="link-underline" href="contact.html">Contact →</a>
         </div>
       </div>
     </section>
@@ -109,12 +96,13 @@
       <div class="footer__grid">
         <div class="footer__brandcol footer__col">
           <p class="footer__name">Kareem Elkhatib</p>
-          <p class="footer__tag">Engineer, founder, and wedding filmmaker based in Atlanta, Georgia.</p>
+          <p class="footer__tag">Electrical engineering student, founder, and photographer based in Atlanta, Georgia.</p>
         </div>
         <div class="footer__col">
           <h4>Explore</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
             <li><a href="photography.html">Photography</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -138,6 +126,5 @@
 
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
-  <script src="assets/js/timeline.js" defer></script>
 </body>
 </html>

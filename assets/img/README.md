@@ -1,29 +1,28 @@
 # Images
 
-Drop your real photos in this folder and they'll replace the placeholder
-blocks. Recommended files (filenames referenced in the HTML TODO comments):
+This folder holds `favicon.svg` (the browser-tab icon) and, once you add it,
+your profile photo.
+
+## The one photo the site needs
 
 | Filename | Used on | Suggested size | Notes |
 | --- | --- | --- | --- |
-| `hero.jpg` | `index.html` hero band | 2000×1100 (landscape) | Your strongest wide shot — wedding or portrait |
-| `portrait.jpg` | `about.html` | 1200×1500 (portrait, 4:5) | A clean photo of you |
-| `lsm.jpg` | `business.html` | 1200×1500 (portrait, 4:5) | Logo, dashboard, or a website you built |
+| `profile.jpg` | `index.html` hero | Square, ≥600×600 | A clean headshot — it's shown in a circle |
 
-## How to swap a placeholder for a real photo
-In the relevant `.html` file, find the block that looks like:
+## How to swap the placeholder for your photo
+In `index.html`, find:
 ```html
-<!-- TODO: replace with real image → assets/img/hero.jpg -->
-<div class="frame frame--placeholder" data-label="Hero image — replace"></div>
+<!-- TODO: replace with real portrait → assets/img/profile.jpg -->
+<div class="frame frame--placeholder frame--round" data-label="Profile"></div>
 ```
 Replace it with:
 ```html
-<div class="frame">
-  <img src="assets/img/hero.jpg" alt="Describe the photo here" />
+<div class="frame frame--round">
+  <img src="assets/img/profile.jpg" alt="Kareem Elkhatib" />
 </div>
 ```
-The `.frame` wrapper keeps the correct aspect ratio and rounding automatically.
-Always write a short, descriptive `alt` for accessibility and SEO.
 
 ## Tips
-- Export JPGs at ~80% quality; keep each under ~400 KB for fast loading.
-- Use consistent color/tone across photos for a cohesive, premium feel.
+- Export JPGs at ~80% quality; keep it under ~400 KB for fast loading.
+- Later nice-to-have: an `og.jpg` (1200×630) for link previews — then add the
+  `og:image` meta tag where the HTML `TODO` comments mention it.
