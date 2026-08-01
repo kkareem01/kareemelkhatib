@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>First-time setup — Convenience Center</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/crm.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/webauthn.js" defer></script>
+  <script src="/js/setup.js" defer></script>
+</head>
+<body>
+  <main class="auth">
+    <div class="auth__card reveal">
+      <p class="eyebrow">One-time setup</p>
+      <h1>Claim your vault</h1>
+
+      <section id="step-token">
+        <p class="auth__sub">Paste the setup token you created with
+          <code>wrangler secret put SETUP_TOKEN</code>.</p>
+        <form id="token-form">
+          <div class="field" style="text-align:left;">
+            <label class="field__label" for="setup-token">Setup token</label>
+            <input class="input" id="setup-token" type="password" autocomplete="off" required>
+          </div>
+          <div class="field" style="text-align:left;">
+            <label class="field__label" for="device-label">Name this device</label>
+            <input class="input" id="device-label" type="text" value="My Mac" maxlength="60" required>
+          </div>
+          <button class="btn btn--accent" type="submit">Create passkey</button>
+        </form>
+      </section>
+
+      <section id="step-passphrase" hidden>
+        <p class="auth__sub">Passkey registered. Now set a backup passphrase for
+          devices without Face ID / Touch ID. Keep it somewhere safe.</p>
+        <form id="passphrase-form">
+          <div class="field" style="text-align:left;">
+            <label class="field__label" for="new-passphrase">Backup passphrase</label>
+            <input class="input" id="new-passphrase" type="text"
+                   autocomplete="new-password" minlength="12" required>
+          </div>
+          <button class="btn btn--ghost btn--sm" type="button" id="regen">Suggest another</button>
+          <button class="btn btn--accent" type="submit">Save &amp; finish</button>
+        </form>
+      </section>
+
+      <p class="clipboard__status" id="setup-status" role="status"></p>
+    </div>
+  </main>
+</body>
+</html>

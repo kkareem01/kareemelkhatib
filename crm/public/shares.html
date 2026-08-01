@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Shares &amp; devices — Convenience Center</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/crm.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/webauthn.js" defer></script>
+  <script src="/js/shares.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="/">K.</a>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a class="topbar__link" href="/">Dashboard</a>
+        <a class="topbar__link" href="/vault.html">Vault</a>
+        <a class="topbar__link" href="/notes.html">Notes</a>
+        <a class="topbar__link" href="/shares.html" aria-current="page">Shares</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <p class="eyebrow reveal">Control room</p>
+    <h1 class="reveal" style="--i:1">Shares &amp; devices.</h1>
+
+    <div class="grid grid--2">
+      <section class="card reveal" style="--i:2" aria-labelledby="shares-title">
+        <div class="card__title">
+          <h2 id="shares-title">Active share links</h2>
+        </div>
+        <div class="file-list" id="shares-list"></div>
+      </section>
+
+      <section class="card reveal" style="--i:3" aria-labelledby="devices-title">
+        <div class="card__title">
+          <h2 id="devices-title">Passkeys</h2>
+          <button class="btn btn--ghost btn--sm" id="add-device" type="button">+ Add this device</button>
+        </div>
+        <div class="file-list" id="passkeys-list"></div>
+        <p class="clipboard__status" id="device-status" role="status"></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

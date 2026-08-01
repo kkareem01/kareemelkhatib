@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sign in — Kareem's Convenience Center</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/crm.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/webauthn.js" defer></script>
+  <script src="/js/login.js" defer></script>
+</head>
+<body>
+  <main class="auth">
+    <div class="auth__card reveal">
+      <p class="eyebrow">Kareem Elkhatib</p>
+      <h1>Convenience Center</h1>
+      <p class="auth__sub">Private vault. Sign in with your passkey.</p>
+
+      <button class="btn btn--accent" id="passkey-btn" type="button">
+        Sign in with passkey
+      </button>
+      <p class="clipboard__status" id="login-status" role="status"></p>
+
+      <div class="auth__alt">
+        <button class="btn btn--ghost btn--sm" id="show-passphrase" type="button">
+          Use backup passphrase instead
+        </button>
+        <form id="passphrase-form" hidden>
+          <div class="field" style="text-align:left; margin-top: 0.8rem;">
+            <label class="field__label" for="passphrase">Backup passphrase</label>
+            <input class="input" id="passphrase" name="passphrase" type="password"
+                   autocomplete="current-password" minlength="12" required>
+          </div>
+          <button class="btn" type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Copy to .dev.vars for local development (never commit .dev.vars).
+# Generate with: openssl rand -base64 32
+SETUP_TOKEN=replace-with-random-token
+# DEV=1 relaxes the __Host- cookie prefix (plain-name cookie) for http://localhost
+DEV=1

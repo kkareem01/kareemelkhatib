@@ -1,0 +1,32 @@
+name = "crm-kareemelkhatib"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+# Static assets: served directly by Cloudflare (free, don't count against
+# Worker request quota). Only /api/* and /s/* invoke the Worker.
+# Security headers for static pages live in public/_headers.
+[assets]
+directory = "public"
+binding = "ASSETS"
+run_worker_first = ["/api/*", "/s/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "crm-db"
+# Replace after running: wrangler d1 create crm-db
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "VAULT"
+bucket_name = "crm-vault"
+
+[triggers]
+crons = ["0 3 * * *"]
+
+# Uncomment once the kareemelkhatib.com zone is active in Cloudflare.
+# Adding this custom domain auto-creates the DNS record + certificate.
+# routes = [{ pattern = "crm.kareemelkhatib.com", custom_domain = true }]
+
+[observability]
+enabled = true

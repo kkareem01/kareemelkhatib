@@ -1,0 +1,91 @@
+/* ============================================================
+   Design Tokens — crm.kareemelkhatib.com
+   Synced from /assets/css/tokens.css on the portfolio — keep the
+   two files aligned when the brand changes.
+   Additions here: self-hosted variable fonts (strict CSP — no
+   Google Fonts CDN) and a dark-mode token block.
+   ============================================================ */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-var-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/hanken-grotesk-var-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Color: warm white base, espresso ink, sand + bronze accent --- */
+  --paper: #faf8f4;
+  --panel: #ffffff;
+  --ink: #211b16;
+  --ink-soft: #5c5247;
+  --ink-faint: #9a8f81;
+  --sand: #c9b79c;
+  --sand-wash: #efe7da;
+  --bronze: #a6724b;
+  --bronze-deep: #8a5d3a;
+  --line: #e7dfd2;
+  --danger: #a03d2e;
+  --ok: #4a6b4f;
+
+  /* --- Typography --- */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Fluid type scale */
+  --step--1: clamp(0.83rem, 0.79rem + 0.18vw, 0.94rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  --step-3:  clamp(2rem, 1.6rem + 2vw, 3.1rem);
+  --step-4:  clamp(2.7rem, 1.9rem + 3.6vw, 4.8rem);
+
+  /* --- Spacing scale --- */
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* --- Layout --- */
+  --measure: 68ch;
+  --container: 1080px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-med: 0.6s;
+  --dur-fast: 0.3s;
+
+  /* --- Misc --- */
+  --radius: 2px;
+  --shadow-soft: 0 24px 60px -28px rgba(33, 27, 22, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161210;
+    --panel: #1f1a15;
+    --ink: #efe7da;
+    --ink-soft: #b6a998;
+    --ink-faint: #7d7264;
+    --sand: #5c5247;
+    --sand-wash: #2a231d;
+    --bronze: #c08a5e;
+    --bronze-deep: #d29d72;
+    --line: #322a23;
+    --danger: #cf6a58;
+    --ok: #7fa886;
+    --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.6);
+  }
+}

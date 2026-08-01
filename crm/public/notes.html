@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Notes — Convenience Center</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/crm.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/notes.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="/">K.</a>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a class="topbar__link" href="/">Dashboard</a>
+        <a class="topbar__link" href="/vault.html">Vault</a>
+        <a class="topbar__link" href="/notes.html" aria-current="page">Notes</a>
+        <a class="topbar__link" href="/shares.html">Shares</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <p class="eyebrow reveal">Notes</p>
+    <h1 class="reveal" style="--i:1">Think it down.</h1>
+
+    <div class="notes-layout reveal" style="--i:2">
+      <aside>
+        <button class="btn btn--accent" id="new-note" type="button"
+                style="width:100%; margin-bottom: var(--space-xs);">+ New note</button>
+        <div class="notes-list" id="notes-list"></div>
+      </aside>
+      <section class="card" id="editor-card" hidden>
+        <div class="field">
+          <label class="field__label" for="note-title">Title</label>
+          <input class="input" id="note-title" type="text" maxlength="200" placeholder="Untitled">
+        </div>
+        <div class="field">
+          <label class="field__label" for="note-body">Note (markdown welcome)</label>
+          <textarea class="input" id="note-body" rows="14"></textarea>
+        </div>
+        <div style="display:flex; gap: var(--space-xs); align-items:center;">
+          <button class="btn btn--accent" id="save-note" type="button">Save</button>
+          <button class="btn btn--danger btn--sm" id="delete-note" type="button">Delete</button>
+          <span class="clipboard__status" id="note-status" role="status"></span>
+        </div>
+      </section>
+      <p class="empty" id="no-note">Select or create a note.</p>
+    </div>
+  </main>
+</body>
+</html>

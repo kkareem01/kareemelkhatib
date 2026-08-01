@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vault — Convenience Center</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/crm.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/ui.js" defer></script>
+  <script src="/vendor/qrcode.js" defer></script>
+  <script src="/js/vault.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="/">K.</a>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a class="topbar__link" href="/">Dashboard</a>
+        <a class="topbar__link" href="/vault.html" aria-current="page">Vault</a>
+        <a class="topbar__link" href="/notes.html">Notes</a>
+        <a class="topbar__link" href="/shares.html">Shares</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <p class="eyebrow reveal">Vault</p>
+    <h1 class="reveal" style="--i:1">Your files, everywhere.</h1>
+
+    <div class="dropzone reveal" id="dropzone" style="--i:2">
+      <p>Drag files here, or</p>
+      <div class="dropzone__actions">
+        <button class="btn btn--accent" id="pick-files" type="button">Choose files</button>
+        <button class="btn btn--ghost" id="pick-camera" type="button">📷 Camera</button>
+      </div>
+      <p class="clipboard__status" id="upload-status" role="status"></p>
+      <input type="file" id="file-input" multiple hidden>
+      <input type="file" id="camera-input" accept="image/*" capture="environment" hidden>
+    </div>
+
+    <div class="vault-toolbar reveal" style="--i:3">
+      <input class="input" id="search" type="search" placeholder="Search files…">
+      <div id="tag-chips" style="display:flex; gap:0.35rem; flex-wrap:wrap;"></div>
+    </div>
+
+    <div class="file-list" id="file-list"></div>
+    <div style="text-align:center; margin-top: var(--space-sm);">
+      <button class="btn btn--ghost" id="load-more" type="button" hidden>Load more</button>
+    </div>
+  </main>
+
+  <dialog class="modal modal--wide" id="preview-modal">
+    <button class="btn btn--ghost btn--sm modal__close" id="preview-close" type="button">Close</button>
+    <h2 id="preview-title"></h2>
+    <div id="preview-body"></div>
+  </dialog>
+
+  <dialog class="modal" id="share-modal">
+    <form method="dialog" id="share-form">
+      <h2>Share file</h2>
+      <p id="share-file-name" class="auth__sub"></p>
+      <div class="field">
+        <label class="field__label" for="share-expiry">Expires</label>
+        <select class="input" id="share-expiry">
+          <option value="1h">1 hour</option>
+          <option value="24h" selected>24 hours</option>
+          <option value="7d">7 days</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field__label" for="share-max">Max downloads (optional)</label>
+        <input class="input" id="share-max" type="number" min="1" max="1000" placeholder="Unlimited">
+      </div>
+      <button class="btn btn--accent" value="create" type="submit">Create link</button>
+      <button class="btn btn--ghost" value="cancel" formnovalidate>Cancel</button>
+    </form>
+    <div id="share-result" hidden>
+      <div class="qr-holder" id="share-qr"></div>
+      <p class="share-url" id="share-url"></p>
+      <button class="btn btn--accent" id="share-copy" type="button">Copy link</button>
+      <button class="btn btn--ghost" id="share-done" type="button">Done</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="rename-modal">
+    <form method="dialog" id="rename-form">
+      <h2>Edit file</h2>
+      <div class="field">
+        <label class="field__label" for="rename-name">Name</label>
+        <input class="input" id="rename-name" type="text" maxlength="255" required>
+      </div>
+      <div class="field">
+        <label class="field__label" for="rename-tags">Tags (comma-separated)</label>
+        <input class="input" id="rename-tags" type="text" placeholder="tax, receipts">
+      </div>
+      <button class="btn btn--accent" value="save" type="submit">Save</button>
+      <button class="btn btn--ghost" value="cancel" formnovalidate>Cancel</button>
+    </form>
+  </dialog>
+</body>
+</html>
