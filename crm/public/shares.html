@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Shares &amp; devices — Convenience Center</title>
+  <title>Shares &amp; devices — Kareem Elkhatib</title>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/crm.css">
   <script src="/js/api.js" defer></script>
@@ -18,7 +18,7 @@
       <a class="topbar__brand" href="/">K.</a>
       <nav class="topbar__nav" aria-label="Primary">
         <a class="topbar__link" href="/">Dashboard</a>
-        <a class="topbar__link" href="/vault.html">Vault</a>
+        <a class="topbar__link" href="/vault.html">Files</a>
         <a class="topbar__link" href="/notes.html">Notes</a>
         <a class="topbar__link" href="/shares.html" aria-current="page">Shares</a>
       </nav>
@@ -26,8 +26,8 @@
   </header>
 
   <main class="shell">
-    <p class="eyebrow reveal">Control room</p>
-    <h1 class="reveal" style="--i:1">Shares &amp; devices.</h1>
+    <h1 class="reveal">Shares &amp; devices</h1>
+    <p class="auth__sub reveal" style="--i:1">Manage the file links you've shared with others, and the devices that can sign in to this site.</p>
 
     <div class="grid grid--2">
       <section class="card reveal" style="--i:2" aria-labelledby="shares-title">
@@ -39,11 +39,30 @@
 
       <section class="card reveal" style="--i:3" aria-labelledby="devices-title">
         <div class="card__title">
-          <h2 id="devices-title">Passkeys</h2>
+          <h2 id="devices-title">Sign-in devices (passkeys)</h2>
           <button class="btn btn--ghost btn--sm" id="add-device" type="button">+ Add this device</button>
         </div>
         <div class="file-list" id="passkeys-list"></div>
         <p class="clipboard__status" id="device-status" role="status"></p>
+      </section>
+
+      <section class="card reveal" style="--i:4" aria-labelledby="passphrase-title">
+        <div class="card__title">
+          <h2 id="passphrase-title">Backup passphrase</h2>
+        </div>
+        <p class="auth__sub">Used to sign in on devices without Face ID / Touch ID. Changing it replaces the old one immediately.</p>
+        <form id="passphrase-form">
+          <div class="field">
+            <label class="field__label" for="new-passphrase">New passphrase (12+ characters)</label>
+            <input class="input" id="new-passphrase" type="text" autocomplete="new-password"
+                   minlength="12" required>
+          </div>
+          <div style="display:flex; gap: var(--space-xs); align-items:center; flex-wrap:wrap;">
+            <button class="btn btn--ghost btn--sm" type="button" id="suggest-passphrase">Suggest one</button>
+            <button class="btn btn--accent" type="submit">Change passphrase</button>
+            <span class="clipboard__status" id="passphrase-status" role="status"></span>
+          </div>
+        </form>
       </section>
     </div>
   </main>

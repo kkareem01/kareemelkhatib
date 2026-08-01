@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard — Convenience Center</title>
+  <title>Dashboard — Kareem Elkhatib</title>
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/crm.css">
   <script src="/js/api.js" defer></script>
@@ -17,7 +17,7 @@
       <a class="topbar__brand" href="/">K.</a>
       <nav class="topbar__nav" aria-label="Primary">
         <a class="topbar__link" href="/" aria-current="page">Dashboard</a>
-        <a class="topbar__link" href="/vault.html">Vault</a>
+        <a class="topbar__link" href="/vault.html">Files</a>
         <a class="topbar__link" href="/notes.html">Notes</a>
         <a class="topbar__link" href="/shares.html">Shares</a>
         <button class="btn btn--ghost btn--sm" id="logout-btn" type="button">Sign out</button>
@@ -26,13 +26,13 @@
   </header>
 
   <main class="shell">
-    <p class="eyebrow reveal">Convenience Center</p>
-    <h1 class="reveal" style="--i:1">Everything in one place.</h1>
+    <h1 class="reveal">Dashboard</h1>
+    <p class="auth__sub reveal" style="--i:1">Saved links, a clipboard that syncs between your devices, and your latest uploads.</p>
 
     <div class="grid grid--main">
       <section class="card reveal" style="--i:2" aria-labelledby="links-title">
         <div class="card__title">
-          <h2 id="links-title">Quick access</h2>
+          <h2 id="links-title">Saved links</h2>
           <div>
             <button class="btn btn--ghost btn--sm" id="edit-links" type="button">Edit</button>
             <button class="btn btn--ghost btn--sm" id="add-link" type="button">+ Add</button>
@@ -43,7 +43,7 @@
 
       <section class="card reveal" style="--i:3" aria-labelledby="clip-title">
         <div class="card__title">
-          <h2 id="clip-title">Clipboard</h2>
+          <h2 id="clip-title">Synced clipboard</h2>
         </div>
         <textarea class="input clipboard__area" id="clipboard"
                   placeholder="Paste anything here — it syncs to your other devices."></textarea>
@@ -53,8 +53,8 @@
 
     <section class="card reveal" style="--i:4; margin-top: var(--space-md);" aria-labelledby="recent-title">
       <div class="card__title">
-        <h2 id="recent-title">Recent files</h2>
-        <a class="topbar__link" href="/vault.html">Open vault →</a>
+        <h2 id="recent-title">Recently uploaded files</h2>
+        <a class="topbar__link" href="/vault.html">All files →</a>
       </div>
       <div class="file-list" id="recent-files"></div>
     </section>

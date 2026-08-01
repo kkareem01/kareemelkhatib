@@ -142,7 +142,7 @@
     if (state.files.length === 0) {
       var empty = document.createElement("p");
       empty.className = "empty";
-      empty.textContent = state.q || state.tag ? "No matches." : "The vault is empty — upload something.";
+      empty.textContent = state.q || state.tag ? "No matches." : "No files uploaded yet.";
       fileList.appendChild(empty);
       return;
     }

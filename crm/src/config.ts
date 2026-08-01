@@ -1,7 +1,7 @@
 import type { Env } from "./types";
 
 /** WebAuthn relying-party identity (production). */
-export const RP_NAME = "Kareem's Convenience Center";
+export const RP_NAME = "crm.kareemelkhatib.com";
 export const PROD_RP_ID = "crm.kareemelkhatib.com";
 export const PROD_ORIGIN = "https://crm.kareemelkhatib.com";
 

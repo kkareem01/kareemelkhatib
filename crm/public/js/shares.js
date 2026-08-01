@@ -139,6 +139,41 @@
     }
   });
 
+  /* ---------- Backup passphrase ---------- */
+
+  var passphraseForm = document.getElementById("passphrase-form");
+  var passphraseInput = document.getElementById("new-passphrase");
+  var passphraseStatus = document.getElementById("passphrase-status");
+
+  var WORDS = ("amber basil cedar delta ember fable gable harbor indigo juniper " +
+    "kestrel lantern maple nectar orchid pebble quartz raven saffron timber " +
+    "umber violet walnut yonder zephyr anchor breeze canyon dune flint " +
+    "grove harvest island jasper knoll ledger meadow north opal prairie quill " +
+    "ridge summit trellis upland vessel willow yarrow zenith").split(/\s+/);
+
+  document.getElementById("suggest-passphrase").addEventListener("click", function () {
+    var indexes = new Uint32Array(5);
+    crypto.getRandomValues(indexes);
+    var words = [];
+    for (var i = 0; i < 5; i++) words.push(WORDS[indexes[i] % WORDS.length]);
+    passphraseInput.value = words.join("-") + "-" + (indexes[0] % 100);
+  });
+
+  passphraseForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    passphraseStatus.textContent = "Saving…";
+    try {
+      await window.API.put("/api/auth/passphrase-config", {
+        passphrase: passphraseInput.value,
+      });
+      passphraseStatus.textContent = "Changed — save it somewhere safe.";
+      window.UI.toast("Backup passphrase changed");
+    } catch (err) {
+      passphraseStatus.textContent = "";
+      window.UI.toast(err.message || "Couldn't change passphrase", true);
+    }
+  });
+
   loadShares();
   loadPasskeys();
   window.setInterval(loadShares, 30000); // keep countdowns honest

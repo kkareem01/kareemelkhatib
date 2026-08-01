@@ -3,7 +3,9 @@
   "use strict";
 
   function redirectToLogin() {
-    if (!/\/login\.html$/.test(window.location.pathname)) {
+    // Workers assets serve /login.html at /login — treat both (and /setup)
+    // as auth pages so a 401 there never triggers a redirect loop.
+    if (!/\/(login|setup)(\.html)?$/.test(window.location.pathname)) {
       window.location.href = "/login.html";
     }
   }

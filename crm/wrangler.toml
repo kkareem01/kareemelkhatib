@@ -1,6 +1,7 @@
 name = "crm-kareemelkhatib"
 main = "src/index.ts"
 compatibility_date = "2025-06-01"
+routes = [{ pattern = "crm.kareemelkhatib.com", custom_domain = true }]
 
 # Static assets: served directly by Cloudflare (free, don't count against
 # Worker request quota). Only /api/* and /s/* invoke the Worker.
@@ -13,8 +14,7 @@ run_worker_first = ["/api/*", "/s/*"]
 [[d1_databases]]
 binding = "DB"
 database_name = "crm-db"
-# Replace after running: wrangler d1 create crm-db
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "29af6814-8ac0-4ed1-a596-bf36c49bffc2"
 migrations_dir = "migrations"
 
 [[r2_buckets]]
@@ -23,10 +23,6 @@ bucket_name = "crm-vault"
 
 [triggers]
 crons = ["0 3 * * *"]
-
-# Uncomment once the kareemelkhatib.com zone is active in Cloudflare.
-# Adding this custom domain auto-creates the DNS record + certificate.
-# routes = [{ pattern = "crm.kareemelkhatib.com", custom_domain = true }]
 
 [observability]
 enabled = true
