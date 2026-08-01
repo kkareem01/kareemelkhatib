@@ -1,6 +1,6 @@
 /* ============================================================
    Page-specific layouts — Kareem Elkhatib
-   Home hero + about · resume · pic-time gallery · contact
+   Home hero + about · resume · contact
    Depends on tokens.css + styles.css.
    ============================================================ */
 
@@ -165,25 +165,6 @@
   color: var(--ink-faint);
   margin-bottom: var(--space-xs);
 }
-
-/* ============================================================
-   PHOTOGRAPHY — pic-time gallery wrapper
-   ============================================================ */
-.gallery-wrap {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 88vh;
-  background: var(--panel);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.gallery-wrap #pictimeIntegration { display: block; width: 100%; height: 88vh; min-height: 620px; border: 0; }
-.gallery-note { color: var(--ink-faint); font-size: var(--step--1); margin-top: var(--space-sm); }
-
-/* Full-bleed variant — gallery fills the viewport below the sticky nav */
-.gallery-wrap--full { min-height: calc(100vh - 76px); border-top: 0; }
-.gallery-wrap--full #pictimeIntegration { height: calc(100vh - 76px); min-height: 520px; }
 
 /* ============================================================
    CONTACT — link list, vertically centered below the nav

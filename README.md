@@ -1,21 +1,19 @@
 # kareemelkhatib.com
 
 The personal site of **Kareem Elkhatib** — electrical engineering student at
-the University of Georgia, founder of Local Service Marketers, and wedding &
-engagement photographer. Simple, professional, static HTML/CSS/JS — no build
-step, deploys anywhere.
+the University of Georgia and founder of Local Service Marketers. Simple,
+professional, static HTML/CSS/JS — no build step, deploys anywhere.
 
 ## Pages
 | File | Purpose |
 | --- | --- |
 | `index.html` | Home — profile: photo, identity line, short bio, links |
 | `resume.html` | Full resume in HTML + PDF download |
-| `photography.html` | Embedded pic-time gallery (bykareem.pic-time.com) |
 | `contact.html` | Email, phone, Instagram, LinkedIn |
 
 ## Project structure
 ```
-index.html, resume.html, photography.html, contact.html
+index.html, resume.html, contact.html
 assets/
   Kareem-Elkhatib-Resume.pdf   (linked from resume.html — replace to update)
   css/  tokens.css (design variables) · styles.css (shared) · pages.css (page layouts)
@@ -37,11 +35,6 @@ Then open <http://localhost:8000>. (Any static server works.)
 - **Colors / fonts / spacing** are all CSS variables in `assets/css/tokens.css`.
   Change them in one place to retheme the whole site.
 - **Profile photo**: replace the placeholder — see `assets/img/README.md`.
-
-## The pic-time gallery
-The live gallery is embedded on `photography.html` via pic-time's official
-script + iframe (`bykareem.pic-time.com`). It loads its own content — nothing to
-maintain here. To swap galleries, update the iframe `src`.
 
 ## Deploy
 Upload the whole folder to any static host — your existing kareemelkhatib.com,
