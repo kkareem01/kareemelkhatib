@@ -58,8 +58,8 @@ body::before {
   padding-inline: var(--gutter);
 }
 
-.section { padding-block: clamp(var(--space-lg), 7vh, var(--space-xl)); position: relative; z-index: 2; }
-.section--tight { padding-block: var(--space-lg); }
+.section { padding-block: clamp(var(--space-md), 4.5vh, var(--space-lg)); position: relative; z-index: 2; }
+.section--tight { padding-block: var(--space-md); }
 
 .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
 
@@ -265,7 +265,7 @@ body::before {
   z-index: 2;
   background: var(--ink);
   color: var(--paper);
-  padding-block: var(--space-xl) var(--space-md);
+  padding-block: var(--space-lg) var(--space-md);
 }
 .footer a { color: var(--paper); }
 .footer__grid {
@@ -296,7 +296,7 @@ body::before {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
   padding-top: var(--space-md);
   border-top: 1px solid color-mix(in srgb, var(--paper) 14%, transparent);
   font-size: var(--step--1);
