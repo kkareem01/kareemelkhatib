@@ -41,129 +41,30 @@
   </header>
 
   <main>
-    <!-- ===== HEADER ===== -->
-    <header class="page-head container">
-      <p class="eyebrow">Resume</p>
-      <h1 class="page-head__title">Kareem Elkhatib</h1>
-      <p class="lead">
-        Atlanta, GA &middot;
-        <a class="link-underline" href="mailto:Kareem@elkhatib.co">Kareem@elkhatib.co</a> &middot;
-        <a class="link-underline" href="tel:+14042219111">(404) 221-9111</a> &middot;
-        <a class="link-underline" href="https://linkedin.com/in/kelkhatib" target="_blank" rel="noopener">linkedin.com/in/kelkhatib</a> &middot;
-        U.S. Citizen
-      </p>
-      <p style="margin-top: var(--space-md);">
+    <!-- ===== RESUME — embedded PDF ===== -->
+    <section class="section resume-page container">
+      <header class="page-head reveal">
+        <h1 class="page-head__title">Resume</h1>
+      </header>
+
+      <div class="pdf-viewer reveal" style="--i: 1;">
+        <object
+          class="pdf-viewer__object"
+          data="assets/Kareem-Elkhatib-Resume.pdf#view=FitH"
+          type="application/pdf"
+          aria-label="Kareem Elkhatib resume PDF"
+        >
+          <!-- Fallback for browsers that can't inline PDFs (iOS Safari, etc.) -->
+          <div class="pdf-viewer__fallback">
+            <p>This browser can&rsquo;t display the PDF inline.</p>
+            <a class="btn btn--ghost" href="assets/Kareem-Elkhatib-Resume.pdf" target="_blank" rel="noopener">View PDF &nearr;</a>
+          </div>
+        </object>
+      </div>
+
+      <p class="pdf-viewer__actions reveal" style="--i: 2;">
         <a class="btn btn--accent" href="assets/Kareem-Elkhatib-Resume.pdf" download>Download PDF &darr;</a>
       </p>
-    </header>
-
-    <!-- ===== EDUCATION ===== -->
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Education</p>
-        <div class="credential reveal" style="--i: 1;">
-          <div>
-            <p class="credential__school">University of Georgia</p>
-            <p class="credential__degree">B.S. in Electrical Engineering</p>
-          </div>
-          <div></div>
-          <p class="credential__meta">
-            Expected May 2028<br />
-            <span class="credential__gpa">GPA 3.55</span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Experience</p>
-        <div class="xp" style="margin-top: var(--space-md);">
-          <article class="xp__item reveal" style="--i: 1;">
-            <div>
-              <p class="xp__role">Sales Manager</p>
-              <p class="xp__org">AZR — startup Amazon FBA mentorship program</p>
-            </div>
-            <p class="xp__when">Sept &ndash; Dec 2025 &middot; Remote</p>
-            <ul class="xp__points">
-              <li>Closed <strong>$20,000 in revenue</strong> by running a high-ticket sales framework and meeting daily KPIs.</li>
-              <li>Led a sales campaign increasing show rates by <strong>12% across 800 calls</strong> by applying structured discovery and rapport-building communication.</li>
-            </ul>
-          </article>
-          <article class="xp__item reveal" style="--i: 2;">
-            <div>
-              <p class="xp__role">Growth Operator</p>
-              <p class="xp__org">Suit Warehouse — menswear retail business</p>
-            </div>
-            <p class="xp__when">Jan &ndash; Aug 2025 &middot; Gainesville, GA</p>
-            <ul class="xp__points">
-              <li>Created a sales funnel for prom attire campaigns, generating <strong>40 qualified leads and $6,000 in revenue</strong> within one month.</li>
-              <li>Built an Excel-based inventory and reorder tracker for <strong>10 SKUs</strong>, reducing stockouts and improving replenishment decisions by tracking product demand.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Projects</p>
-        <div class="cards" style="margin-top: var(--space-md);">
-          <article class="card reveal" style="--i: 1;">
-            <p class="card__kicker">Engineering &times; Film</p>
-            <h2 class="card__title">External Camera Power System</h2>
-            <p class="card__date">June 2025</p>
-            <p>
-              Engineered an external camera power system by matching OEM
-              battery voltage requirements and integrating a dummy-battery +
-              V-mount setup, increasing runtime ~20&times; and enabling
-              full-day shoots. Validated power stability under load through
-              extended-duration field tests, cutting setup and reset time by
-              20% per shoot.
-            </p>
-          </article>
-          <article class="card reveal" style="--i: 2;">
-            <p class="card__kicker">Circuit Design</p>
-            <h2 class="card__title">Op-Amp Low-Pass Filter</h2>
-            <p class="card__date">Nov 2025</p>
-            <p>
-              Assembled a TL081 active low-pass filter on a breadboard,
-              powered from &plusmn;5&nbsp;V rails with an AD3. Derived the
-              transfer function and cutoff frequency from the circuit model,
-              then verified the frequency response and noise-reduction
-              behavior on the AD3 network analyzer.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Skills</p>
-        <div class="chips-group reveal" style="--i: 1; margin-top: var(--space-md);">
-          <h3>Tools &amp; Methods</h3>
-          <ul class="chips">
-            <li>Problem Solving</li>
-            <li>Analytical</li>
-            <li>MultiSim</li>
-            <li>Circuit Analysis</li>
-            <li>Excel</li>
-          </ul>
-        </div>
-        <div class="chips-group reveal" style="--i: 2;">
-          <h3>Programming</h3>
-          <ul class="chips">
-            <li>Python</li>
-            <li>MATLAB</li>
-            <li>RLAB</li>
-            <li>C++</li>
-          </ul>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -173,7 +74,7 @@
       <div class="footer__grid">
         <div class="footer__brandcol footer__col">
           <p class="footer__name">Kareem Elkhatib</p>
-          <p class="footer__tag">Electrical engineering student and founder based in Atlanta, Georgia.</p>
+          <p class="footer__tag">Electrical engineering student in Atlanta, Georgia, working at the intersection of hardware and AI.</p>
         </div>
         <div class="footer__col">
           <h4>Explore</h4>
@@ -186,10 +87,10 @@
         <div class="footer__col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="mailto:Kareem@elkhatib.co">Email</a></li>
+            <li><a href="#" data-guard="email" rel="nofollow">Email</a></li>
             <li><a href="https://instagram.com/kkareem_1" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://linkedin.com/in/kelkhatib" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="tel:+14042219111">(404) 221-9111</a></li>
+            <li><a href="#" data-guard="phone" rel="nofollow"><span class="guard__text">&bull;&bull;&bull;</span></a></li>
           </ul>
         </div>
       </div>
@@ -202,5 +103,6 @@
 
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/guard.js" defer></script>
 </body>
 </html>
