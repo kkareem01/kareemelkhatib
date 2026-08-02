@@ -90,6 +90,129 @@
 }
 
 /* ============================================================
+   HOME — LIFE STRIP (tilted snapshots on a vertical line)
+   ============================================================ */
+#life .container { display: flex; flex-direction: column; align-items: center; }
+
+.life-strip {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+}
+/* the thin vertical line the snapshots hang off */
+.life-strip::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+}
+
+.life-strip__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(var(--space-md), 6vw, var(--space-xl));
+  align-items: center;
+  padding-block: var(--space-lg);
+}
+/* bronze pin where each item meets the line */
+.life-strip__item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--bronze);
+  box-shadow: 0 0 0 4px var(--paper);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.life-strip__photo {
+  margin: 0;
+  justify-self: end;
+  width: clamp(200px, 30vw, 300px);
+  background: var(--panel);
+  padding: 10px 10px 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-soft);
+  transform: rotate(-2.5deg);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.life-strip__photo:hover { transform: rotate(0deg) translateY(-4px); }
+.life-strip__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1px;
+  background: var(--sand-wash);
+}
+
+.life-strip__text { justify-self: start; max-width: 26ch; }
+.life-strip__label {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--bronze);
+  margin: 0 0 var(--space-2xs);
+}
+.life-strip__caption {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* even items flip: photo right, text left */
+.life-strip__item:nth-child(even) .life-strip__photo {
+  order: 2;
+  justify-self: start;
+  transform: rotate(2deg);
+}
+.life-strip__item:nth-child(even) .life-strip__photo:hover { transform: rotate(0deg) translateY(-4px); }
+.life-strip__item:nth-child(even) .life-strip__text {
+  order: 1;
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .life-strip::before,
+  .life-strip__item::before { display: none; }
+  .life-strip__item,
+  .life-strip__item:nth-child(even) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: var(--space-sm);
+    padding-block: var(--space-md);
+    text-align: center;
+  }
+  .life-strip__photo,
+  .life-strip__item:nth-child(even) .life-strip__photo {
+    order: 1;
+    justify-self: center;
+    width: min(78vw, 300px);
+    transform: rotate(-1.5deg);
+  }
+  .life-strip__item:nth-child(even) .life-strip__photo { transform: rotate(1.5deg); }
+  .life-strip__text,
+  .life-strip__item:nth-child(even) .life-strip__text {
+    order: 2;
+    justify-self: center;
+    text-align: center;
+  }
+}
+
+/* ============================================================
    RESUME — embedded PDF viewer
    ============================================================ */
 .resume-page .page-head { padding-block: 0 var(--space-md); }
@@ -98,7 +221,11 @@
   border-radius: var(--radius);
   background: var(--panel);
   box-shadow: var(--shadow-soft);
-  height: min(78vh, 1100px);
+  /* Document-like width so the PDF isn't blown up to full container width,
+     tall enough to show most of a page at once. */
+  max-width: 880px;
+  margin-inline: auto;
+  height: min(88svh, 1250px);
   overflow: hidden;
 }
 .pdf-viewer__object {
@@ -117,7 +244,7 @@
   color: var(--ink-soft);
   padding: var(--space-lg);
 }
-.pdf-viewer__actions { margin-top: var(--space-md); }
+.pdf-viewer__actions { margin-top: var(--space-md); text-align: center; }
 @media (max-width: 720px) {
   .pdf-viewer { height: min(70vh, 640px); }
 }
