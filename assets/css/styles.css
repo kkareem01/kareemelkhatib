@@ -58,8 +58,8 @@ body::before {
   padding-inline: var(--gutter);
 }
 
-.section { padding-block: clamp(var(--space-xl), 12vh, var(--space-2xl)); position: relative; z-index: 2; }
-.section--tight { padding-block: var(--space-xl); }
+.section { padding-block: clamp(var(--space-lg), 7vh, var(--space-xl)); position: relative; z-index: 2; }
+.section--tight { padding-block: var(--space-lg); }
 
 .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
 

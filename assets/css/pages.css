@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* ---------- Generic page header (interior pages) ---------- */
-.page-head { padding-block: clamp(var(--space-xl), 16vh, var(--space-2xl)) var(--space-lg); }
+.page-head { padding-block: clamp(var(--space-lg), 10vh, var(--space-xl)) var(--space-md); }
 .page-head__title { font-size: var(--step-4); margin-top: var(--space-2xs); }
 .page-head .lead { margin-top: var(--space-md); }
 
@@ -14,11 +14,11 @@
    ============================================================ */
 .hero { position: relative; z-index: 2; padding-top: var(--space-lg); }
 .hero--home {
-  min-height: 72svh;
+  min-height: 58svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-block: var(--space-xl) var(--space-md);
+  padding-block: var(--space-lg) var(--space-md);
   text-align: center;
 }
 .hero--home .container { width: 100%; }
@@ -81,7 +81,7 @@
 /* ============================================================
    SHARED — section header (eyebrow · headline · sub-headline)
    ============================================================ */
-.section-head { margin-bottom: var(--space-lg); }
+.section-head { margin-bottom: var(--space-md); }
 .section-head .eyebrow { margin-bottom: var(--space-sm); }
 .section-head__title {
   font-size: var(--step-3);
@@ -121,6 +121,18 @@
 .upto-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-soft);
+}
+.upto-card__logo {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  margin-bottom: var(--space-xs);
+}
+.upto-card__logo img {
+  height: 100%;
+  width: auto;
+  max-width: 72px;
+  object-fit: contain;
 }
 .upto-card__label {
   font-size: var(--step--1);
@@ -205,13 +217,29 @@
 }
 
 /* ============================================================
-   ABOUT — full story page
+   ABOUT — full story page (numbered sections, Nate-Herk style)
    ============================================================ */
 .story { max-width: var(--measure); }
 .story p { color: var(--ink-soft); }
-.story h2 {
+
+.story-sec {
+  border-top: 1px solid var(--line);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+}
+.story-sec:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.story-sec__num {
+  font-size: var(--step--1);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--bronze);
+  margin: 0 0 var(--space-2xs);
+}
+.story-sec__title {
   font-size: var(--step-2);
-  margin: var(--space-lg) 0 var(--space-sm);
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-sm);
 }
 
 /* ============================================================
@@ -296,6 +324,11 @@
   color: var(--ink-soft);
   margin: 0;
 }
+.life-strip__link {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  font-size: var(--step--1);
+}
 
 /* even items flip: photo right, text left */
 .life-strip__item:nth-child(even) .life-strip__photo {
@@ -378,10 +411,10 @@
    CONTACT — link list, vertically centered below the nav
    ============================================================ */
 .contact-page {
-  min-height: 70vh;
+  min-height: 58vh;
   display: flex;
   align-items: center;
-  padding-block: var(--space-xl);
+  padding-block: var(--space-lg);
 }
 .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .contact-list--solo { max-width: 640px; }
