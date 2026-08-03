@@ -254,10 +254,12 @@
   padding-top: var(--space-md);
 }
 .story-sec:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
-.story-sec__no {
+.story-sec__num {
+  font-size: var(--step--1);
+  letter-spacing: 0.24em;
+  font-weight: 600;
   color: var(--bronze);
-  margin-right: 0.3em;
-  font-variant-numeric: tabular-nums;
+  margin: 0 0 var(--space-2xs);
 }
 .story-sec__title {
   font-size: var(--step-2);
