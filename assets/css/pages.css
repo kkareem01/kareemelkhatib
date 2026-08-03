@@ -205,7 +205,19 @@
 @media (max-width: 520px) {
   .awards__item { grid-template-columns: 1fr; row-gap: 0.35em; }
 }
-.awards--certs .awards__item { grid-template-columns: 1fr; }
+.awards--certs .awards__item {
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-xs);
+  align-items: start;
+}
+.awards__logo {
+  width: 28px;
+  height: 28px;
+  margin-top: 0.3em;
+}
+@media (max-width: 520px) {
+  .awards--certs .awards__item { grid-template-columns: auto 1fr; }
+}
 
 /* ============================================================
    HOME — BACKGROUND (about teaser)
